@@ -13,7 +13,9 @@ class Queue:
 
     def dequeue(self):
         """Removendo o primeiro elemento da lista"""
-        return self._data.pop(0)
+        if len(self._data) > 0:
+            return self._data.pop(0)
+        return None
 
     def search(self, index):
         """Buscando o elemento pelo index"""
