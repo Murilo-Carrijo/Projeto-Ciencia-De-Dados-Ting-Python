@@ -21,10 +21,12 @@ def process(path_file, instance):
 def remove(instance):
     """Removendo arquivo"""
     if len(instance) == 0:
-        return sys.stdout.write(f"Não há elementos\n")
+        return sys.stdout.write("Não há elementos\n")
 
     removed_file = instance.dequeue()
-    return sys.stdout.write(str(f"Arquivo {removed_file} removido com sucesso\n"))
+    return sys.stdout.write(str(
+        f"Arquivo {removed_file} removido com sucesso\n"
+    ))
 
 
 def file_metadata(instance, position):
@@ -34,9 +36,9 @@ def file_metadata(instance, position):
         import_file = txt_importer(file)
 
         result = {
-        "nome_do_arquivo": file,
-        "qtd_linhas": len(import_file),
-        "linhas_do_arquivo": import_file,
+            "nome_do_arquivo": file,
+            "qtd_linhas": len(import_file),
+            "linhas_do_arquivo": import_file,
         }
 
         return sys.stdout.write(str(result))
