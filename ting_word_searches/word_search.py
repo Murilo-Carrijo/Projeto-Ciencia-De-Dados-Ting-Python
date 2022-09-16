@@ -24,3 +24,23 @@ def exists_word(word, instance):
 
 def search_by_word(word, instance):
     """Aqui irá sua implementação"""
+    occurrences = []
+    result = []
+    file = txt_importer(instance._data[0])
+    list = enumerate(file)
+
+    for index, line in list:
+        if word.lower() in line.lower():
+            occurrences.append({
+                'linha': index + 1,
+                'conteudo': line
+            })
+
+    if occurrences != []:
+        result.append({
+            "palavra": word,
+            "arquivo": instance._data[0],
+            "ocorrencias": occurrences
+        })
+
+    return result
