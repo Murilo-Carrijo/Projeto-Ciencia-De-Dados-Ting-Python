@@ -1,5 +1,6 @@
 from ting_file_management.file_management import txt_importer
 
+
 def exists_word(word, instance):
     """Verifica ocorrencia da palavra"""
     occurrences = []
@@ -9,7 +10,7 @@ def exists_word(word, instance):
 
     for index, line in list:
         if word.lower() in line.lower():
-                occurrences.append({'linha': index + 1})
+            occurrences.append({'linha': index + 1})
 
     if occurrences != []:
         result.append({
@@ -17,8 +18,8 @@ def exists_word(word, instance):
             "arquivo": instance._data[0],
             "ocorrencias": occurrences
         })
-    return result
 
+    return result
 
 
 def search_by_word(word, instance):
